@@ -182,6 +182,25 @@ img {
   color: var(--orange-dark);
 }
 
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  margin: 4px 0;
+  background: currentColor;
+}
+
 .site-header--home {
   background: var(--ink);
   border-bottom: 0;
@@ -226,6 +245,10 @@ img {
 .site-header--home .nav-links .btn {
   margin-left: 12px;
   padding: 10px 20px;
+}
+
+.site-header--home .menu-toggle {
+  color: var(--white);
 }
 
 /* Home hero */
@@ -707,7 +730,7 @@ img {
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 40px;
+  gap: 48px;
 }
 
 .site-footer h4 {
@@ -746,6 +769,71 @@ img {
   padding-top: 24px;
 }
 
+@media (max-width: 980px) {
+
+  .section {
+    padding: 96px 0;
+  }
+
+  .hero-inner {
+    flex-direction: column-reverse;
+    gap: 28px;
+  }
+
+  .hero-media {
+    width: 100%;
+  }
+
+  .feature-row,
+  .playbook-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 64px;
+  }
+
+  .feature-row--reverse .feature-media {
+    order: 0;
+  } 
+
+  .cta-body {
+    padding: 32px 24px;
+  }
+  
+  .site-header--home .container {
+    flex-wrap: wrap;
+    gap: 12px 16px;
+  }
+
+  .site-header--home .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .js .site-header--home nav {
+    display: none;
+    flex-basis: 100%;
+  }
+
+  .js .site-header--home nav.is-open {
+    display: block;
+  }
+
+  .site-header--home .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .site-header--home .nav-links a {
+    padding: 8px 0;
+  }
+
+  .site-header--home .nav-links .btn {
+    margin: 8px 0 0;
+    padding: 10px 20px;
+  }
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 40px;
@@ -759,7 +847,9 @@ img {
     padding: 64px 0;
   }
 
-  .feature-row {
+
+  .feature-row,
+  .playbook-grid {
     grid-template-columns: 1fr;
     gap: 32px;
     margin-bottom: 64px;
@@ -768,7 +858,7 @@ img {
   .feature-row--reverse .feature-media {
     order: 0;
   }
-
+  
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -788,12 +878,22 @@ img {
     font-size: 34px;
   }
 
-  .card-grid {
-    grid-template-columns: 1fr;
+  .section {
+    padding: 48px 0;
   }
 
-  .cta-body {
-    padding: 32px 24px;
+  .feature-row,
+  .playbook-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .feature-row--reverse .feature-media {
+    order: 0;
+  }
+  
+  .card-grid {
+    grid-template-columns: 1fr;
   }
 
   .footer-grid {

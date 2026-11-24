@@ -14,7 +14,12 @@
   <header class="site-header site-header--home">
     <div class="container">
       <a class="logo" href="index.html"><span class="logo-mark"></span>Calico Media</a>
-      <nav aria-label="Main">
+      <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="primary-navigation" aria-label="Main">
         <ul class="nav-links">
           <li><a href="features.html">Features</a></li>
           <li><a href="pricing.html">Pricing</a></li>
@@ -158,29 +163,30 @@
           <a class="logo" href="index.html"><span class="logo-mark"></span>Calico Media</a>
           <p>Growth planning for local businesses. Specific goals, a realistic plan, and a weekly check-in that keeps you honest.</p>
         </div>
-        <div>
-          <h4>Product</h4>
-          <ul>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="https://app.calicomedia.co/login">Log in</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="mailto:hello@calicomedia.co">hello@calicomedia.co</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="index.html#playbook">Growth playbook</a></li>
-            <li><a href="pricing.html#faq">Pricing FAQ</a></li>
-            <li><a href="contact.html">Book a demo</a></li>
-          </ul>
+          <div class="footer-links">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="https://app.calicomedia.co/login">Log in</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="mailto:hello@calicomedia.co">hello@calicomedia.co</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="index.html#playbook">Growth playbook</a></li>
+              <li><a href="pricing.html#faq">Pricing FAQ</a></li>
+              <li><a href="contact.html">Book a demo</a></li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
@@ -188,5 +194,6 @@
       </div>
     </div>
   </footer>
+  <script src="js/nav.js" defer></script>
 </body>
 </html>
