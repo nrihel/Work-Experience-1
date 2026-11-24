@@ -34,7 +34,7 @@ document.querySelectorAll('.menu-toggle').forEach((button) => {
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) {
+    if (window.innerWidth > 980) {
       closeMenu();
     }
   });
