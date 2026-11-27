@@ -10,6 +10,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '..', 'public'), { extensions: ['html'] }));
 
 app.post('/contact', (req, res) => {
+  const honeypotFilled = typeof req.body.company_website === 'string'
+    && req.body.company_website.trim() !== '';
+  const formStartedAt = Number(req.body.formStartedAt);
+  const submittedTooFast = !Number.isFinite(formStartedAt)
+    || Date.now() - formStartedAt < 2000;
+
+  if (honeypotFilled || submittedTooFast) {
+    return res.json({ ok: true });
+  }
+
   const name = (req.body.name || '').trim();
   const email = (req.body.email || '').trim();
   const message = (req.body.message || '').trim();

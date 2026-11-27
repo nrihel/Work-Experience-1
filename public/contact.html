@@ -37,6 +37,16 @@
     <section class="section">
       <div class="container contact-layout">
         <form class="contact-form" id="contact-form" action="/contact" method="post">
+          <div class="contact-form__honeypot" aria-hidden="true">
+            <label for="company-website">Company website</label>
+            <select id="company-website" name="company_website" tabindex="-1" autocomplete="off">
+              <option value="">Select a website type</option>
+              <option value="personal">Personal website</option>
+              <option value="business">Business website</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
           <label for="name">Your name</label>
           <input type="text" id="name" name="name" required>
 

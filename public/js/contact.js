@@ -1,5 +1,6 @@
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('form-status');
+const formStartedAt = Date.now();
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -10,6 +11,15 @@ form.addEventListener('submit', async (event) => {
   statusEl.className = 'form-status';
 
   const data = Object.fromEntries(new FormData(form));
+  data.formStartedAt = formStartedAt;
+
+  if (data.company_website || Date.now() - formStartedAt < 2000) {
+    form.reset();
+    statusEl.textContent = "Thanks, we'll be in touch within one business day.";
+    statusEl.classList.add('form-status--success');
+    button.disabled = false;
+    return;
+  }
 
   try {
     const response = await fetch('/contact', {
