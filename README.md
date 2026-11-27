@@ -26,7 +26,7 @@ data/              Local contact form submissions (git-ignored)
 
 ## Contact form submissions
 
-The contact form posts to `POST /contact`. The server checks the fields and hands the submission to `sendToSupport()` in `server/support.js`.
+The contact form posts to `POST /contact`. The server checks the fields and hands the submission to `sendToSupport()` in `server/support.js`. A hidden honeypot field and a two-second minimum completion time filter likely bots; those submissions receive the same success response as a real submission but are not forwarded to support.
 
 In production `sendToSupport()` emails support@calicomedia.co. Locally it appends one JSON line per submission to `data/submissions.jsonl` and logs it to the console instead, so you can see exactly what support would receive:
 
